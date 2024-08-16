@@ -1,3 +1,4 @@
+import { Direction, Gap, Height, Margin, Padding, Width } from "@/editor/constant";
 import Column from ".";
 
 export const ColumnConfig = {
@@ -10,17 +11,6 @@ export const ColumnConfig = {
     padding: "10px",
     flexDirection: "row" as any
   },
-  stylesSetter: [
-    {
-      label: "Width",
-      name: "width",
-      type: "input"
-    },
-    {
-      label: "Height",
-      name: "height",
-      type: "input"
-    }
-  ],
+  stylesSetter: [Direction, Gap, Margin, Padding, Width, Height],
   component: Column
 };

@@ -1,3 +1,4 @@
+import { Margin, Padding, Width, Height, Direction, Gap } from "@/editor/constant";
 import Section from ".";
 
 export const SectionConfig = {
@@ -10,43 +11,6 @@ export const SectionConfig = {
     padding: "10px",
     flexDirection: "row" as any
   },
-  stylesSetter: [
-    {
-      label: "Direction",
-      name: "flexDirection",
-      type: "select",
-      options: [
-        { label: "Row", value: "row" },
-        { label: "Row reverse", value: "row-reverse" },
-        { label: "Column", value: "column" },
-        { label: "Column reverse", value: "column-reverse" }
-      ]
-    },
-    {
-      label: "Gap",
-      name: "gap",
-      type: "input"
-    },
-    {
-      label: "Width",
-      name: "width",
-      type: "input"
-    },
-    {
-      label: "Height",
-      name: "height",
-      type: "input"
-    },
-    {
-      label: "Margin",
-      name: "margin",
-      type: "input"
-    },
-    {
-      label: "Padding",
-      name: "padding",
-      type: "input"
-    }
-  ],
+  stylesSetter: [Direction, Gap, Margin, Padding, Width, Height],
   component: Section
 };
