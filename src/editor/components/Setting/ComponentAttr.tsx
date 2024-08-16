@@ -43,10 +43,10 @@ export function ComponentAttr() {
 
   return (
     <Form form={form} onValuesChange={valueChange} labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
-      <Form.Item label="组件id">
+      <Form.Item label="Id">
         <Input value={curComponent.id} disabled />
       </Form.Item>
-      <Form.Item label="组件名称">
+      <Form.Item label="Name">
         <Input value={curComponent.name} disabled />
       </Form.Item>
       {componentConfig[curComponent.name]?.setter?.map(setter => (
