@@ -1,6 +1,7 @@
+import { Component } from "@/editor/interface";
 import React, { MouseEventHandler, useState } from "react";
 import { useComponentConfigStore } from "../../stores/component-config";
-import { Component, useComponetsStore } from "../../stores/components";
+import { useComponetsStore } from "../../stores/components";
 import HoverMask from "../HoverMask";
 import SelectedMask from "../SelectedMask";
 
@@ -24,7 +25,7 @@ export function EditArea() {
           name: component.name,
           styles: component.styles,
           ...config.defaultProps,
-          ...component.props,
+          ...component.props
         },
         renderComponents(component.children || [])
       );
@@ -33,7 +34,7 @@ export function EditArea() {
 
   const [hoverComponentId, setHoverComponentId] = useState<number>();
 
-  const handleMouseOver: MouseEventHandler = (e) => {
+  const handleMouseOver: MouseEventHandler = e => {
     const path = e.nativeEvent.composedPath();
 
     for (let i = 0; i < path.length; i += 1) {
@@ -51,7 +52,7 @@ export function EditArea() {
     setHoverComponentId(undefined);
   };
 
-  const handleClick: MouseEventHandler = (e) => {
+  const handleClick: MouseEventHandler = e => {
     const path = e.nativeEvent.composedPath();
 
     for (let i = 0; i < path.length; i += 1) {

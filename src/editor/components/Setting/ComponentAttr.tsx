@@ -1,7 +1,7 @@
 import {
   ComponentConfig,
   ComponentSetter,
-  useComponentConfigStore,
+  useComponentConfigStore
 } from "../../stores/component-config";
 import { useComponetsStore } from "../../stores/components";
 import { Form, Input, InputNumber, Select } from "antd";
@@ -10,8 +10,7 @@ import { useEffect } from "react";
 export function ComponentAttr() {
   const [form] = Form.useForm();
 
-  const { curComponentId, curComponent, updateComponentProps } =
-    useComponetsStore();
+  const { curComponentId, curComponent, updateComponentProps } = useComponetsStore();
   const { componentConfig } = useComponentConfigStore();
 
   useEffect(() => {
@@ -22,15 +21,15 @@ export function ComponentAttr() {
   if (!curComponentId || !curComponent) return null;
 
   function renderFormElememt(setting: ComponentSetter) {
-    const { type, options } = setting;
+    const { type, options, attributes } = setting;
 
     switch (type) {
       case "select":
-        return <Select options={options} />;
+        return <Select {...attributes} options={options} />;
       case "input":
-        return <Input />;
+        return <Input {...attributes} />;
       case "inputNumber":
-        return <InputNumber />;
+        return <InputNumber {...attributes} />;
       default:
         return <></>;
     }
@@ -43,19 +42,14 @@ export function ComponentAttr() {
   }
 
   return (
-    <Form
-      form={form}
-      onValuesChange={valueChange}
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 14 }}
-    >
+    <Form form={form} onValuesChange={valueChange} labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
       <Form.Item label="组件id">
         <Input value={curComponent.id} disabled />
       </Form.Item>
       <Form.Item label="组件名称">
         <Input value={curComponent.name} disabled />
       </Form.Item>
-      {componentConfig[curComponent.name]?.setter?.map((setter) => (
+      {componentConfig[curComponent.name]?.setter?.map(setter => (
         <Form.Item key={setter.name} name={setter.name} label={setter.label}>
           {renderFormElememt(setter)}
         </Form.Item>

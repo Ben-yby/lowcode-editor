@@ -21,13 +21,14 @@ export function useMaterailDrop(accept: string[], id: number) {
           id: new Date().getTime(),
           name: item.type,
           props: config.defaultProps,
+          styles: config?.styles
         },
         id
       );
     },
-    collect: (monitor) => ({
-      canDrop: monitor.canDrop(),
-    }),
+    collect: monitor => ({
+      canDrop: monitor.canDrop()
+    })
   }));
 
   return { canDrop, drop };

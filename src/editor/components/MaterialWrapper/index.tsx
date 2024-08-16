@@ -5,20 +5,15 @@ import { Outline } from "../Outline";
 import { Source } from "../Source";
 
 export function MaterialWrapper() {
-  const [key, setKey] = useState<string>("物料");
+  const [key, setKey] = useState<string>("Material");
 
   return (
     <div>
-      <Segmented
-        value={key}
-        onChange={setKey}
-        block
-        options={["物料", "大纲", "源码"]}
-      />
+      <Segmented value={key} onChange={setKey} block options={["Material", "Outline", "Source"]} />
       <div className="pt-[20px] h-[calc(100vh-60px-30px-20px)]">
-        {key === "物料" && <Material />}
-        {key === "大纲" && <Outline />}
-        {key === "源码" && <Source />}
+        {key === "Material" && <Material />}
+        {key === "Outline" && <Outline />}
+        {key === "Source" && <Source />}
       </div>
     </div>
   );

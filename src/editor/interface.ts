@@ -6,3 +6,12 @@ export interface CommonComponentProps extends PropsWithChildren {
   styles?: CSSProperties;
   [key: string]: any;
 }
+
+export interface Component {
+  id: number;
+  name: string;
+  props: any;
+  styles?: CSSProperties;
+  children?: Component[];
+  parentId?: number;
+}
