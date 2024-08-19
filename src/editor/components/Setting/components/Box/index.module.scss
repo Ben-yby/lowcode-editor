@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 256px;
+  height: 132px;
+  background: url("../../../../../assets/box.svg") no-repeat;
+
+  &::before {
+    color: #b8babf;
+    font-size: 10px;
+    font-weight: 400;
+    position: absolute;
+    transform: scale(0.8);
+    content: "Margin";
+    left: 0.125rem;
+    top: 0;
+  }
+
+  &::after {
+    color: #b8babf;
+    font-size: 10px;
+    font-weight: 400;
+    position: absolute;
+    transform: scale(0.8);
+    content: "Padding";
+    left: 5.5rem;
+    top: 2.8rem;
+  }
+}

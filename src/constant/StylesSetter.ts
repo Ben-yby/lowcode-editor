@@ -16,18 +16,6 @@ export const Gap = {
   type: "input"
 };
 
-export const Margin = {
-  label: "Margin",
-  name: "margin",
-  type: "input"
-};
-
-export const Padding = {
-  label: "Padding",
-  name: "padding",
-  type: "input"
-};
-
 export const Direction = {
   label: "Direction",
   name: "flexDirection",

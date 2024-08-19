@@ -1,15 +1,11 @@
 import { Form, Input, InputNumber, Select } from "antd";
-import { CSSProperties, useEffect } from "react";
+import React, { CSSProperties, useEffect } from "react";
 import { ComponentSetter, useComponentConfigStore } from "../../stores/component-config";
 import { useComponetsStore } from "../../stores/components";
-import React from "react";
-// import CssEditor from "./CssEditor";
-// import { debounce } from "lodash-es";
-// import styleToObject from "style-to-object";
+import { Box } from "./components/Box";
 
 export function ComponentStyle() {
   const [form] = Form.useForm();
-  // const [css, setCss] = useState<string>(`.comp{\n\n}`);
 
   const { curComponentId, curComponent, updateComponentStyles } = useComponetsStore();
   const { componentConfig } = useComponentConfigStore();
@@ -19,26 +15,7 @@ export function ComponentStyle() {
 
     const data = form.getFieldsValue();
     form.setFieldsValue({ ...data, ...curComponent?.styles });
-
-    // setCss(toCSSStr(curComponent?.styles!));
   }, [curComponent]);
-
-  // function toCSSStr(css: Record<string, any>) {
-  //   let str = `.comp {\n`;
-  //   for (const key in css) {
-  //     let value = css[key];
-  //     if (!value) {
-  //       continue;
-  //     }
-  //     if (["width", "height"].includes(key) && !value.toString().endsWith("px")) {
-  //       value += "px";
-  //     }
-
-  //     str += `\t${key}: ${value};\n`;
-  //   }
-  //   str += `}`;
-  //   return str;
-  // }
 
   if (!curComponentId || !curComponent) return null;
 
@@ -63,25 +40,6 @@ export function ComponentStyle() {
     }
   }
 
-  // const handleEditorChange = debounce(value => {
-  //   const css: Record<string, any> = {};
-
-  //   try {
-  //     const cssStr = value
-  //       .replace(/\/\*.*\*\//, "") // 去掉注释 /** */
-  //       .replace(/(\.?[^{]+{)/, "") // 去掉 .comp {
-  //       .replace("}", ""); // 去掉 }
-
-  //     styleToObject(cssStr, (name, value) => {
-  //       css[name.replace(/-\w/, item => item.toUpperCase().replace("-", ""))] = value;
-  //     });
-
-  //     updateComponentStyles(curComponentId, { ...form.getFieldsValue(), ...css }, true);
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // }, 500);
-
   return (
     <Form form={form} onValuesChange={valueChange} labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
       {componentConfig[curComponent.name]?.stylesSetter?.map(setter => (
@@ -89,9 +47,7 @@ export function ComponentStyle() {
           {renderFormElememt(setter)}
         </Form.Item>
       ))}
-      {/* <div className="h-[200px] ml-[16px] mr-[16px] border-[1px] border-[#ccc]">
-        <CssEditor value={css} onChange={handleEditorChange} />
-      </div> */}
+      <Box />
     </Form>
   );
 }

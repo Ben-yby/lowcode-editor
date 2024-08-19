@@ -1,9 +1,10 @@
-import { Margin, Padding, Width, Height } from "@/constant";
+import { Width, Height } from "@/constant";
 import Select from ".";
 
 export const SelectConfig = {
   name: "Select",
   defaultProps: {
+    lable: "",
     options: [
       { value: "jack", label: "Jack" },
       { value: "lucy", label: "Lucy" },
@@ -13,6 +14,6 @@ export const SelectConfig = {
   styles: {
     width: "100%"
   },
-  stylesSetter: [Margin, Padding, Width, Height],
+  stylesSetter: [Width, Height],
   component: Select
 };
