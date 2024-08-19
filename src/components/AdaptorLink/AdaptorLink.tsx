@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import isUrl from "is-url";
 import { Link } from "react-router-dom";
+import React from "react";
 
 export interface OwnProps {
   url: string;

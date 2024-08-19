@@ -1,5 +1,6 @@
 import { Tree } from "antd";
 import { useComponetsStore } from "../../stores/components";
+import React from "react";
 
 export function Outline() {
   const { components, setCurComponentId } = useComponetsStore();

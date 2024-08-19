@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { getComponentById, useComponetsStore } from "../../stores/components";
 import { Dropdown, Popconfirm, Space } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
+import React from "react";
 
 interface SelectedMaskProps {
   portalWrapperClassName: string;
@@ -13,7 +14,7 @@ interface SelectedMaskProps {
 function SelectedMask({
   containerClassName,
   portalWrapperClassName,
-  componentId,
+  componentId
 }: SelectedMaskProps) {
   const [position, setPosition] = useState({
     left: 0,
@@ -21,16 +22,11 @@ function SelectedMask({
     width: 0,
     height: 0,
     labelTop: 0,
-    labelLeft: 0,
+    labelLeft: 0
   });
 
-  const {
-    components,
-    curComponentId,
-    curComponent,
-    deleteComponent,
-    setCurComponentId,
-  } = useComponetsStore();
+  const { components, curComponentId, curComponent, deleteComponent, setCurComponentId } =
+    useComponetsStore();
 
   useEffect(() => {
     updatePosition();
@@ -62,8 +58,7 @@ function SelectedMask({
     if (!node) return;
 
     const { top, left, width, height } = node.getBoundingClientRect();
-    const { top: containerTop, left: containerLeft } =
-      container.getBoundingClientRect();
+    const { top: containerTop, left: containerLeft } = container.getBoundingClientRect();
 
     let labelTop = top - containerTop + container.scrollTop;
     const labelLeft = left - containerLeft + width;
@@ -78,7 +73,7 @@ function SelectedMask({
       width,
       height,
       labelTop,
-      labelLeft,
+      labelLeft
     });
   }
 
@@ -121,7 +116,7 @@ function SelectedMask({
           height: position.height,
           zIndex: 12,
           borderRadius: 4,
-          boxSizing: "border-box",
+          boxSizing: "border-box"
         }}
       />
       <div
@@ -132,19 +127,19 @@ function SelectedMask({
           fontSize: "14px",
           zIndex: 13,
           display: !position.width || position.width < 10 ? "none" : "inline",
-          transform: "translate(-100%, -100%)",
+          transform: "translate(-100%, -100%)"
         }}
       >
         <Space>
           <Dropdown
             menu={{
-              items: parentComponents.map((item) => ({
+              items: parentComponents.map(item => ({
                 key: item.id,
-                label: item.name,
+                label: item.name
               })),
               onClick: ({ key }) => {
                 setCurComponentId(+key);
-              },
+              }
             }}
             disabled={parentComponents.length === 0}
           >
@@ -155,7 +150,7 @@ function SelectedMask({
                 borderRadius: 4,
                 color: "#fff",
                 cursor: "pointer",
-                whiteSpace: "nowrap",
+                whiteSpace: "nowrap"
               }}
             >
               {curSelectedComponent?.name}

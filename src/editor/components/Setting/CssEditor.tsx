@@ -1,5 +1,6 @@
 import MonacoEditor, { EditorProps, OnMount } from "@monaco-editor/react";
 import { editor } from "monaco-editor";
+import React from "react";
 
 export interface EditorFile {
   name: string;
@@ -34,13 +35,13 @@ export default function CssEditor(props: Props) {
         fontSize: 14,
         scrollBeyondLastLine: false,
         minimap: {
-          enabled: false,
+          enabled: false
         },
         scrollbar: {
           verticalScrollbarSize: 6,
-          horizontalScrollbarSize: 6,
+          horizontalScrollbarSize: 6
         },
-        ...options,
+        ...options
       }}
     />
   );

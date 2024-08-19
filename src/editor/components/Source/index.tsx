@@ -1,5 +1,6 @@
 import MonacoEditor, { OnMount } from "@monaco-editor/react";
 import { useComponetsStore } from "../../stores/components";
+import React from "react";
 
 export function Source() {
   const { components } = useComponetsStore();
@@ -21,12 +22,12 @@ export function Source() {
         fontSize: 14,
         scrollBeyondLastLine: false,
         minimap: {
-          enabled: false,
+          enabled: false
         },
         scrollbar: {
           verticalScrollbarSize: 6,
-          horizontalScrollbarSize: 6,
-        },
+          horizontalScrollbarSize: 6
+        }
       }}
     />
   );

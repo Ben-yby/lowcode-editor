@@ -2,6 +2,7 @@ import { Form, Input, InputNumber, Select } from "antd";
 import { CSSProperties, useEffect } from "react";
 import { ComponentSetter, useComponentConfigStore } from "../../stores/component-config";
 import { useComponetsStore } from "../../stores/components";
+import React from "react";
 // import CssEditor from "./CssEditor";
 // import { debounce } from "lodash-es";
 // import styleToObject from "style-to-object";

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useComponetsStore } from "../../stores/components";
 import { ComponentAttr } from "./ComponentAttr";
 import { ComponentStyle } from "./ComponentStyle";
+import React from "react";
 
 export function Setting() {
   const { curComponentId } = useComponetsStore();

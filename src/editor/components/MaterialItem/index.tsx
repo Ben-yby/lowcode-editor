@@ -1,3 +1,4 @@
+import React from "react";
 import { useDrag } from "react-dnd";
 
 export interface MaterialItemProps {
@@ -11,8 +12,8 @@ export function MaterialItem(props: MaterialItemProps) {
   const [_, drag] = useDrag({
     type: name,
     item: {
-      type: name,
-    },
+      type: name
+    }
   });
 
   return (

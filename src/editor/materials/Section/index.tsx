@@ -1,5 +1,6 @@
 import { useMaterailDrop } from "@/editor/hooks/useMaterialDrop";
 import { CommonComponentProps } from "../../interface";
+import React from "react";
 
 const Section = ({ id, children, styles }: CommonComponentProps) => {
   const { canDrop, drop } = useMaterailDrop(["Section", "Column"], id);

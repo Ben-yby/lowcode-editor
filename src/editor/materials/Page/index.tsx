@@ -1,3 +1,4 @@
+import React from "react";
 import { CommonComponentProps } from "../../interface";
 import { useMaterailDrop } from "@/editor/hooks/useMaterialDrop";
 
