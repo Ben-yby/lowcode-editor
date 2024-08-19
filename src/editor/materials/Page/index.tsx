@@ -10,7 +10,7 @@ function Page({ id, children, styles }: CommonComponentProps) {
       data-component-id={id}
       ref={drop}
       className="p-[20px] h-[100%] box-border"
-      style={{ ...styles, border: canDrop ? "2px solid blue" : "none" }}
+      style={{ ...styles, border: canDrop ? "2px solid #7bc0fc" : "none" }}
     >
       {children}
     </div>

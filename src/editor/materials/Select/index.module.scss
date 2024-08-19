@@ -1,0 +1,9 @@
+.selectWrapper {
+  option {
+    display: none;
+  }
+
+  select {
+    pointer-events: none;
+  }
+}

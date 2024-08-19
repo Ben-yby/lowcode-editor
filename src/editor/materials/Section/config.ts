@@ -1,4 +1,4 @@
-import { Margin, Padding, Width, Height, Direction, Gap } from "@/editor/constant";
+import { Direction, Gap, Height, Margin, Padding, Width } from "@/constant";
 import Section from ".";
 
 export const SectionConfig = {

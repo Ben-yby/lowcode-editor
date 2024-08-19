@@ -1,4 +1,4 @@
-import { Margin, Padding, Width, Height } from "@/editor/constant";
+import { Margin, Padding, Width, Height } from "@/constant";
 import Select from ".";
 
 export const SelectConfig = {

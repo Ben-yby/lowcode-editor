@@ -109,8 +109,7 @@ function SelectedMask({
           position: "absolute",
           left: position.left,
           top: position.top,
-          backgroundColor: "rgba(0, 0, 255, 0.1)",
-          border: "1px dashed blue",
+          border: "1px dashed #3491fa",
           pointerEvents: "none",
           width: position.width,
           height: position.height,
@@ -146,7 +145,7 @@ function SelectedMask({
             <div
               style={{
                 padding: "0 8px",
-                backgroundColor: "blue",
+                backgroundColor: "#3491fa",
                 borderRadius: 4,
                 color: "#fff",
                 cursor: "pointer",
@@ -157,7 +156,7 @@ function SelectedMask({
             </div>
           </Dropdown>
           {curComponentId !== 1 && (
-            <div style={{ padding: "0 8px", backgroundColor: "blue" }}>
+            <div style={{ padding: "0 8px", backgroundColor: "#3491fa" }}>
               <Popconfirm
                 title="确认删除？"
                 okText={"确认"}

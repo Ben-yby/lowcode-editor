@@ -68,7 +68,7 @@ export function EditArea() {
 
   return (
     <div
-      className="h-[100%] edit-area"
+      className="h-[100%] bg-white edit-area"
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}

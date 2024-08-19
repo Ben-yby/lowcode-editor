@@ -1,10 +1,11 @@
-import { PropsWithChildren, CSSProperties } from "react";
+import { CSSProperties } from "react";
 
-export interface CommonComponentProps extends PropsWithChildren {
+export interface CommonComponentProps {
   id: number;
   name: string;
   styles?: CSSProperties;
   [key: string]: any;
+  children?: React.ReactNode;
 }
 
 export interface Component {

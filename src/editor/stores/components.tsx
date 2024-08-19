@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 import { create } from "zustand";
-import { ComponentsJson } from "../constant";
+import { ComponentsJson } from "@/constant";
 import { Component } from "../interface";
 
 interface State {

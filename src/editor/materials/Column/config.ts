@@ -1,4 +1,4 @@
-import { Direction, Gap, Height, Margin, Padding, Width } from "@/editor/constant";
+import { Direction, Gap, Height, Margin, Padding, Width } from "@/constant";
 import Column from ".";
 
 export const ColumnConfig = {
