@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 import { create } from "zustand";
-import { PageConfig, SectionConfig, ColumnConfig, ButtonConfig } from "../materials";
+import { PageConfig, SectionConfig, ColumnConfig, ButtonConfig, SelectConfig } from "../materials";
 
 export interface ComponentSetter {
   label: string;
@@ -31,7 +31,8 @@ export const useComponentConfigStore = create<State & Action>(set => ({
     Page: PageConfig,
     Section: SectionConfig,
     Column: ColumnConfig,
-    Button: ButtonConfig
+    Button: ButtonConfig,
+    Select: SelectConfig
   },
   registerComponent: (name, componentConfig) =>
     set(state => {
