@@ -1,4 +1,3 @@
-import { Width, Height } from "@/constant";
 import Select from ".";
 
 export const SelectConfig = {
@@ -14,6 +13,6 @@ export const SelectConfig = {
   styles: {
     width: "100%"
   },
-  stylesSetter: [Width, Height],
+  stylesSetter: [],
   component: Select
 };

@@ -32,18 +32,6 @@ export const ComponentsJson: Component[] = [
               flexDirection: "row"
             },
             parentId: 1723793071268
-          },
-          {
-            id: 1723793118585,
-            name: "Column",
-            props: {},
-            styles: {
-              width: "100%",
-              minHeight: "100px",
-              height: "auto",
-              flexDirection: "row"
-            },
-            parentId: 1723793071268
           }
         ]
       }
