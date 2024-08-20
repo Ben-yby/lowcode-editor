@@ -1,3 +1,9 @@
+export const Spacing = {
+  label: "Spacing",
+  name: "spacing",
+  type: "spacingBox"
+};
+
 export const Width = {
   label: "Width",
   name: "width",

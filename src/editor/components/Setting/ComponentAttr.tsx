@@ -1,12 +1,8 @@
-import React from "react";
-import {
-  ComponentConfig,
-  ComponentSetter,
-  useComponentConfigStore
-} from "../../stores/component-config";
+import { renderFormElememt } from "@/editor/utils";
+import { Form, Input } from "antd";
+import React, { useEffect } from "react";
+import { ComponentConfig, useComponentConfigStore } from "../../stores/component-config";
 import { useComponetsStore } from "../../stores/components";
-import { Form, Input, InputNumber, Select } from "antd";
-import { useEffect } from "react";
 
 export function ComponentAttr() {
   const [form] = Form.useForm();
@@ -20,21 +16,6 @@ export function ComponentAttr() {
   }, [curComponent]);
 
   if (!curComponentId || !curComponent) return null;
-
-  function renderFormElememt(setting: ComponentSetter) {
-    const { type, options, attributes } = setting;
-
-    switch (type) {
-      case "select":
-        return <Select {...attributes} options={options} />;
-      case "input":
-        return <Input {...attributes} />;
-      case "inputNumber":
-        return <InputNumber {...attributes} />;
-      default:
-        return <></>;
-    }
-  }
 
   function valueChange(changeValues: ComponentConfig) {
     if (curComponentId) {

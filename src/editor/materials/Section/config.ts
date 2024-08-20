@@ -1,4 +1,4 @@
-import { Direction, Gap, Height, Width } from "@/constant";
+import { Direction, Gap, Height, Spacing, Width } from "@/constant";
 import Section from ".";
 
 export const SectionConfig = {
@@ -11,6 +11,6 @@ export const SectionConfig = {
     padding: "10px",
     flexDirection: "row" as any
   },
-  stylesSetter: [Direction, Gap, Width, Height],
+  stylesSetter: [Direction, Gap, Width, Height, Spacing],
   component: Section
 };

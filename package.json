@@ -17,6 +17,7 @@
     "@monaco-editor/react": "^4.6.0",
     "@shopify/polaris": "^6.5.0",
     "@shopify/polaris-icons": "^4.10.0",
+    "@tippyjs/react": "^4.2.6",
     "allotment": "^1.20.2",
     "antd": "^5.20.1",
     "autoprefixer": "^10.4.20",

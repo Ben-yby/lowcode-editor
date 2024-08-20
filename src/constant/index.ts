@@ -1,6 +1,7 @@
 import { Component } from "../editor/interface";
 
 export * from "./StylesSetter";
+
 export const ComponentsJson: Component[] = [
   {
     id: 1,

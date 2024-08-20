@@ -1,4 +1,4 @@
-import { Direction, Gap, Height, Width } from "@/constant";
+import { Spacing, Direction, Gap, Height, Width } from "@/constant";
 import Column from ".";
 
 export const ColumnConfig = {
@@ -11,6 +11,6 @@ export const ColumnConfig = {
     padding: "10px",
     flexDirection: "row" as any
   },
-  stylesSetter: [Direction, Gap, Width, Height],
+  stylesSetter: [Direction, Gap, Width, Height, Spacing],
   component: Column
 };
