@@ -12,7 +12,7 @@ const Column = ({ id, styles, children }: CommonComponentProps) => {
       data-component-id={id}
       ref={drop}
       style={styles}
-      className={`${canDrop ? "border-[2px] border-[#7bc0fc]" : ""}`}
+      className={`flex ${canDrop ? "border-[2px] border-[#7bc0fc]" : ""}`}
     >
       {!hasChildren ? (
         <div className="bg-gray-50 w-[100%] h-[100px] leading-[100px] text-center text-[#b8babf]">
