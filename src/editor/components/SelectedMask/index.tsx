@@ -1,9 +1,9 @@
+import { Option } from "@/editor/interface";
 import { DeleteOutlined } from "@ant-design/icons";
 import { Dropdown, Popconfirm, Space } from "antd";
 import React, { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import { getComponentById, useComponetsStore } from "../../stores/components";
-import { Options } from "@/editor/interface";
 
 interface SelectedMaskProps {
   portalWrapperClassName: string;
@@ -164,7 +164,7 @@ function SelectedMask({
           {curSelectedComponent?.name === "Select" && (
             <Dropdown
               menu={{
-                items: curSelectedComponent?.props?.options.map((option: Options) => ({
+                items: curSelectedComponent?.props?.options.map((option: Option) => ({
                   label: option.label,
                   key: option.value
                 })),
@@ -191,7 +191,7 @@ function SelectedMask({
           {curComponentId !== 1 && (
             <div style={{ padding: "0 8px", backgroundColor: "#3491fa" }}>
               <Popconfirm
-                title="Confirm deletion?"
+                title="Confirm delete?"
                 okText="confirm"
                 cancelText="cancel"
                 onConfirm={handleDelete}

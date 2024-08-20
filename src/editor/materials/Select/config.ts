@@ -8,7 +8,7 @@ export const SelectConfig = {
     options: [
       { value: "jack", label: "Jack" },
       { value: "lucy", label: "Lucy" },
-      { value: "Yiminghe", label: "yiminghe" }
+      { value: "yiminghe", label: "Yiminghe" }
     ]
   },
   styles: {

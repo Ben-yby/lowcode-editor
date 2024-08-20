@@ -17,7 +17,7 @@ export interface Component {
   parentId?: number;
 }
 
-export interface Options {
+export interface Option {
   label: string;
   value: string;
 }

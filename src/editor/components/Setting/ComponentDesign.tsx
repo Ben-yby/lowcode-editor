@@ -8,7 +8,7 @@ import { camelCase, debounce, isNil } from "lodash-es";
 
 const SpacingKeys = Spacings.map(key => camelCase(key));
 
-export function ComponentStyle() {
+export function ComponentDesign() {
   const [form] = Form.useForm();
   const [spacing, updateSpacing] = useState<string[]>();
 
