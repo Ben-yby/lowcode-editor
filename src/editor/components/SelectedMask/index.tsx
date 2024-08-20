@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { DeleteOutlined } from "@ant-design/icons";
+import { Dropdown, Popconfirm, Space } from "antd";
+import React, { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import { getComponentById, useComponetsStore } from "../../stores/components";
-import { Dropdown, Popconfirm, Space } from "antd";
-import { DeleteOutlined } from "@ant-design/icons";
-import React from "react";
+import { Options } from "@/editor/interface";
 
 interface SelectedMaskProps {
   portalWrapperClassName: string;
@@ -25,8 +25,14 @@ function SelectedMask({
     labelLeft: 0
   });
 
-  const { components, curComponentId, curComponent, deleteComponent, setCurComponentId } =
-    useComponetsStore();
+  const {
+    components,
+    curComponentId,
+    curComponent,
+    deleteComponent,
+    setCurComponentId,
+    updateComponentProps
+  } = useComponetsStore();
 
   useEffect(() => {
     updatePosition();
@@ -155,12 +161,39 @@ function SelectedMask({
               {curSelectedComponent?.name}
             </div>
           </Dropdown>
+          {curSelectedComponent?.name === "Select" && (
+            <Dropdown
+              menu={{
+                items: curSelectedComponent?.props?.options.map((option: Options) => ({
+                  label: option.label,
+                  key: option.value
+                })),
+                onClick: ({ key }) => {
+                  updateComponentProps(curComponentId!, { value: key });
+                }
+              }}
+              disabled={parentComponents.length === 0}
+            >
+              <div
+                style={{
+                  padding: "0 8px",
+                  backgroundColor: "#3491fa",
+                  borderRadius: 4,
+                  color: "#fff",
+                  cursor: "pointer",
+                  whiteSpace: "nowrap"
+                }}
+              >
+                Options
+              </div>
+            </Dropdown>
+          )}
           {curComponentId !== 1 && (
             <div style={{ padding: "0 8px", backgroundColor: "#3491fa" }}>
               <Popconfirm
-                title="确认删除？"
-                okText={"确认"}
-                cancelText={"取消"}
+                title="Confirm deletion?"
+                okText="confirm"
+                cancelText="cancel"
                 onConfirm={handleDelete}
               >
                 <DeleteOutlined style={{ color: "#fff" }} />

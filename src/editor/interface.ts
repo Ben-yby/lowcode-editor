@@ -16,3 +16,8 @@ export interface Component {
   children?: Component[];
   parentId?: number;
 }
+
+export interface Options {
+  label: string;
+  value: string;
+}

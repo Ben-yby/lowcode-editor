@@ -4,6 +4,7 @@ export const SelectConfig = {
   name: "Select",
   defaultProps: {
     lable: "",
+    value: "",
     options: [
       { value: "jack", label: "Jack" },
       { value: "lucy", label: "Lucy" },
