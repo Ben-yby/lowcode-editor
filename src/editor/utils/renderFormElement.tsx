@@ -1,7 +1,7 @@
 import { Input, InputNumber, Select } from "antd";
 import React from "react";
 import SpacingBox from "../components/Setting/components/SpacingBox";
-import { ComponentSetter } from "../stores/component-config";
+import { ComponentSetter } from "../interface";
 
 export function renderFormElememt(setting: ComponentSetter) {
   const { type, options, attributes } = setting;

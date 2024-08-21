@@ -1,19 +1,18 @@
+import { Label } from "@/constant";
+import { ComponentConfig } from "@/editor/interface";
 import Select from ".";
 
-export const SelectConfig = {
+export const SelectConfig: ComponentConfig = {
   name: "Select",
   defaultProps: {
     lable: "",
     value: "",
-    options: [
-      { value: "jack", label: "Jack" },
-      { value: "lucy", label: "Lucy" },
-      { value: "yiminghe", label: "Yiminghe" }
-    ]
+    options: []
   },
   styles: {
     width: "100%"
   },
+  setter: [Label],
   stylesSetter: [],
   component: Select
 };

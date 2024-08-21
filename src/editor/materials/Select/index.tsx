@@ -4,12 +4,12 @@ import React from "react";
 import { CommonComponentProps } from "../../interface";
 import style from "./index.module.scss";
 
-const Select = ({ id, lable, value, options, styles }: CommonComponentProps) => {
+const Select = ({ id, label, value, options, styles }: CommonComponentProps) => {
   return (
     <div className={style.selectWrapper} data-component-id={id} style={styles}>
       <PolarisSelect
-        label={lable}
-        labelHidden={isEmpty(lable)}
+        label={label}
+        labelHidden={isEmpty(label)}
         options={options}
         value={value}
         onChange={() => {}}

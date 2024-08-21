@@ -1,22 +1,6 @@
-import { CSSProperties } from "react";
 import { create } from "zustand";
-import { PageConfig, SectionConfig, ColumnConfig, ButtonConfig, SelectConfig } from "../materials";
-
-export interface ComponentSetter {
-  label: string;
-  name: string;
-  type: string;
-  [key: string]: any;
-}
-
-export interface ComponentConfig {
-  name: string;
-  defaultProps: Record<string, any>;
-  styles?: CSSProperties;
-  setter?: ComponentSetter[];
-  stylesSetter?: ComponentSetter[];
-  component: any;
-}
+import { ComponentConfig } from "../interface";
+import { ButtonConfig, ColumnConfig, PageConfig, SectionConfig, SelectConfig } from "../materials";
 
 interface State {
   componentConfig: { [key: string]: ComponentConfig };

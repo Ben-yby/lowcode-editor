@@ -1,8 +1,8 @@
-import { Option } from "@/editor/interface";
+import { ComponentConfig, Option } from "@/editor/interface";
 import { renderFormElememt } from "@/editor/utils";
 import { Button, Form } from "antd";
 import React, { useEffect, useState } from "react";
-import { ComponentConfig, useComponentConfigStore } from "../../stores/component-config";
+import { useComponentConfigStore } from "../../stores/component-config";
 import { useComponetsStore } from "../../stores/components";
 import OptionsDrawer from "./components/OptionsDrawer";
 
@@ -41,18 +41,20 @@ export function ComponentProperties() {
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 14 }}
       >
-        {curComponent?.name === "Select" && (
-          <div className="w-[100%] text-center">
-            <Button className="w-[90%]" onClick={() => updateOptionsDrawerVisible(true)}>
-              Manage Options
-            </Button>
-          </div>
-        )}
         {componentConfig[curComponent.name]?.setter?.map(setter => (
           <Form.Item key={setter.name} name={setter.name} label={setter.label}>
             {renderFormElememt(setter)}
           </Form.Item>
         ))}
+        {curComponent?.name === "Select" && (
+          <Form.Item label="Options">
+            <div className="w-[100%] text-center">
+              <Button className="w-[90%]" onClick={() => updateOptionsDrawerVisible(true)}>
+                Manage Options
+              </Button>
+            </div>
+          </Form.Item>
+        )}
       </Form>
 
       <OptionsDrawer
